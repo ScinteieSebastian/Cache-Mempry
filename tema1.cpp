@@ -7,6 +7,7 @@
 #include <fstream>
 
 using namespace std;
+
 ifstream f1("ram.in");
 ifstream f2("operations.in");
 ifstream f5("ram.out");
