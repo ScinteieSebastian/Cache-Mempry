@@ -1,0 +1,33 @@
+		
+
+		Pentru implementarea acestei teme am folosit structurile de date : 
+		->elem_info : aceasta structura o folosesc pentru a retine adresa si valoarea unui proces;
+		->structura Ram : o folosesc pentru a salva intr un vector elementele din fisierul ram.in , si mai apoi pentru a lucra cu ele
+		Clase folosite in implementarea temei :
+		-> clasa Set : care are 2 elmente de tip elem_info , toate operatiile la nivel de set  le-am implementat in aceasta clasa de la 	
+		*metoda put in care am 3 cazuri daca way0 e gol fac put de nou element in el , daca unul dintr way_uri este plin si celalalt este gol fac put in cel gol si daca ambele sunt pline ma folosesc de un contor , care creste la fiecare adaugare in set, pentru a identifica cea mai veche adaugare si o supra scriu cu nou element
+		*metoda get care imi extrage un element din set in functie de adresa
+		*metoda is_empty care imi verifica daca setul este gol
+		*metoda has_key care imi verifica daca elemntul ce-i corespunde adresei key este in set
+
+		-> clasa Hashtable: este un vector de clase Set alocat dinaminc si are principalele metode:
+		* put care imi apeleaza functia put din set pentru un anumit pentru setul corespunzator indexului(adresa trecuta prin functia hash)
+		* get care apeleaza get din set pentru a extrage valoarea unei adrese
+		* print_file functia imi printeaza in cache.out cele trei hashtable L11, L12, L2
+		* Am si setul de metode is_dirty, put_star, remove_star cu care verific , pun sau sterg un elment de pe dirty_bite
+		* is_occupate verifica daca un set are ambele way uri ocupate si daca noul element pe care vreau sa-l introduc are adresa diferita de cele din set
+		* metoda write_back imi citeste tot fisierul ram.out intr-un vector de structuri dupa care vreifica modifica valoare corespondenta adresei ce i se da ca parametru
+
+		Functii utilizate in rezolvarea temei:
+
+		-> functia de read care imi verifica daca o adresa exista in L1 , daca este break, daca nucontinua verificare in L2 , daca o gaseste o copiaza in L1, daca nici in L2 nu este caut in fisierul ram.in si fac update si in L2 si in L1
+		-> functia write : - daca gasete adresa in L1 ii modifica valoare in L1 , L2 si pune pe dirty pe cea din L12
+						   - daca nu e in L1 o cauta in L2 o modifica, daca o gasete ii face update in L1 si o trece pe cea din L12 pe dirty
+						   - daca nici in L2 nu este ii face put in L2 si L1
+		Functiile de hash:
+			Am implementat 2 pentru cele 2 tipuri de memorie cache (L1 si L2), in principiu transfor adresa in baza 2 dupa care selectez biti corespunzator celor cerutin in enunt, transfor numarul obtinut in baza 10 si il returnez
+		In main:
+
+			In prima parte am declaratii:
+				Hashtable urile, auxiliare ce ma vor ajuta la implementare dupa care citesc din fisierul operation.in linie cu linie si pentru fiecare linie aplic functiile read sau write in functie de valorile citite
+			In final scriu in fisierele out si inchid fisierele.
