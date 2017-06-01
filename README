@@ -1,6 +1,6 @@
 		
 
-		Pentru implementarea acestei teme am folosit structurile de date : 
+		Pentru implementarea acestui proiect am folosit structurile de date : 
 		->elem_info : aceasta structura o folosesc pentru a retine adresa si valoarea unui proces;
 		->structura Ram : o folosesc pentru a salva intr un vector elementele din fisierul ram.in , si mai apoi pentru a lucra cu ele
 		Clase folosite in implementarea temei :
